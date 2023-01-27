@@ -1,15 +1,16 @@
 const {
   SlashCommandBuilder,
-  CommandInteraction,
-  EmbedBuilder,
+  ChatInputCommandInteraction,
+  Client,
 } = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder().setName("ping").setDescription("Pong!"),
   /**
    *
-   * @param {CommandInteraction} interaction
+   * @param {ChatInputCommandInteraction} interaction
+   * @param {Client} client
    */
-  async execute(interaction) {
-    interaction.reply({ content: "Pong!" });
+  async execute(interaction, client) {
+    interaction.reply({ content: `${client.ws.ping}ms :ping_pong:` });
   },
 };
