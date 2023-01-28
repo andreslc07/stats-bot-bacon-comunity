@@ -11,6 +11,6 @@ module.exports = {
    * @param {Client} client
    */
   async execute(interaction, client) {
-    interaction.reply({ content: `${client.ws.ping}ms :ping_pong:` });
+    return interaction.reply({ content: `${client.ws.ping}ms :ping_pong:` });
   },
 };
